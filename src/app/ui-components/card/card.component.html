@@ -1,0 +1,28 @@
+<ng-container>
+  <div class="content">
+    <div class="card">
+      <div class="row">
+        <div class="col bandwith">{{name}}</div>
+        <div class="col download-icon"><i class="fas fa-arrow-down"></i></div>
+        <div class="col upload-icon"><i class="fas fa-arrow-up"></i></div>
+      </div>
+      <div class="row">
+        <div class="col throlled">Unthrolled</div>
+        <div class="col download">Download</div>
+        <div class="col upload">Upload</div>
+      </div>
+      <div class="row">
+        <div class="col throlled campaigns">{{campaing}}</div>
+        <div class="col download">10Mbps</div>
+        <div class="col upload">10Mbps</div>
+      </div>
+      <div class="row">
+        <div class="col price">R{{rate}}pm</div>
+        <div class="col logo"> <img [src]="image" alt="logo" /></div>
+        <div class="col coverage"><p>Check coverage<p></div>
+      </div>
+      </div>
+      
+    </div>
+
+</ng-container>

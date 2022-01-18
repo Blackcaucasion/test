@@ -1,0 +1,55 @@
+<!-- <div class="container"> -->
+<ng-container>
+    <div class="row">
+        <div class="col-12">
+            <ul class="provider">
+                <li *ngFor="let provider of providers ">
+                    <!-- <img *ngFor="" [src]="providerInfo" alt="logo" /> -->
+                    <input type="checkbox" name="myCheck" id="myCheck"
+                        (click)="changeSelection(provider,$event?.target)">{{provider}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row subheader">
+        <div class=" col">
+            <label>Filter By:</label>
+            <button type="button" class="btn btn-outline-secondary speed">Speed <i class="fa fa-angle-down"
+                    aria-hidden="true"></i>
+            </button>
+
+            <button type="button" class="btn btn-outline-secondary price ">Price <i class="fa fa-angle-down"
+                    aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="col">
+            <div center-button>
+                <label class="center_label" style="
+                position: absolute;
+                margin-top: 3px;
+                left: 35%;
+            ">Deal Type:</label>
+                <select [(ngModel)]="campainCode" (ngModelChange)="valurChange($event)">
+                    <option value="Selected" disabled selected>Select</option>
+                    <option *ngFor=" let camp of campaings " [value]="camp.code">
+                        {{camp.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+</ng-container>
+<ng-container>
+    <ul class="dashboard row">
+        <li class="col-6" *ngFor="let product of selectedProducts">
+            <app-card [name]="product?.productCode" [rate]="product.productRate" [campaing]="promocodes.name"
+                [image]="providerInfo">
+            </app-card>
+        </li>
+    </ul>
+
+
+</ng-container>
+<!-- </div> -->

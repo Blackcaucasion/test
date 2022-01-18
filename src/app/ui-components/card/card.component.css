@@ -1,0 +1,122 @@
+.card{
+    border-radius: 4px;
+    margin: 20px;
+    box-shadow: 1px 0px 2px 2px;
+    height: 140px;
+    position: relative;
+    display: block;
+    /* width: 500px; */
+    border-radius: 0px;
+
+}
+.card .bandwith{
+    font-family: sans-serif;
+    font-weight: 600;
+    /* font-size: 20px; */
+    padding: 10px;
+    padding-left: 25px;
+    
+}
+.card .download-icon{
+    padding: 10px;
+    position:absolute;
+    left:75%;
+}
+.card .upload-icon{
+    padding: 10px;
+    position: absolute;
+    left: 90%;
+}
+.card .throlled{
+    padding-left: 25px;
+    font-weight: 600;
+    color: gray;
+}
+.card .upload{
+    position: absolute;
+    left: 85%;
+    font-weight: 600;
+    color: gray;
+}
+.card .download{
+    position:absolute;
+    left:68%;
+    font-weight: 600;
+    color: gray;
+}
+.card .price{
+    padding-left: 25px;
+    font-size: xx-large;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #41464b;
+}
+.card .coverage{ 
+    margin-top: 14px;
+    background-color: red;
+    max-width: 158px;
+    position: absolute;
+    left: 69%;
+    height: 28px;
+    box-shadow: 0px 0px 1px 1px;
+    
+}
+.card .coverage>p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.card .logo{
+    position: absolute;
+    left: 186px;
+}
+@media(max-width: 600px){
+    .card{
+        width: 80%;
+        
+    }
+    .card .price{
+        padding-left: 25px;
+        font-size: small;
+        font-weight: 600;
+        font-family: sans-serif;
+        color: #41464b;
+    }
+    .card .logo{
+       display: none;
+    }
+    .card .download-icon{
+       display: none;
+    }
+    .card .upload-icon{
+    display: none;
+    }
+    .card .coverage{ 
+        display: none;
+        /* margin-top: -10px;
+        background-color: red;
+        max-width: 158px;
+        position: absolute;
+        left: 41%;
+        height: 28px;
+        box-shadow: 0px 0px 1px 1px; */
+        }
+        .card .download{
+            position:absolute;
+            left:40%;
+            font-weight: 600;
+            color: gray;
+        }
+        .card .upload{
+            position: absolute;
+            left: 70%;
+            font-weight: 600;
+            color: gray;
+        }
+    
+
+}
