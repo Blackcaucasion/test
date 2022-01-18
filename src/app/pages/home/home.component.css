@@ -6,7 +6,7 @@
     overflow: hidden;
 
 }
-select {
+.select {
     appearance: none;
     position: absolute;
     left: 39%;

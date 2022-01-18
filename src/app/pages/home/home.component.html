@@ -18,9 +18,12 @@
                     aria-hidden="true"></i>
             </button>
 
-            <button type="button" class="btn btn-outline-secondary price ">Price <i class="fa fa-angle-down"
-                    aria-hidden="true"></i>
-            </button>
+            <select  [(ngModel)]="selectedPriceRangeLabels" class="btn btn-outline-secondary" style="width: 94px;" (ngModelChange)="pricesFilter()">
+                <option value="Price" disabled selected>Price</option>
+                <option *ngFor=" let camp of priceRange " [value]="camp.label">
+                    {{camp.label}}
+                </option>
+            </select>
         </div>
         <div class="col">
             <div center-button>
@@ -29,7 +32,7 @@
                 margin-top: 3px;
                 left: 35%;
             ">Deal Type:</label>
-                <select [(ngModel)]="campainCode" (ngModelChange)="valurChange($event)">
+                <select class="select" [(ngModel)]="campainCode" (ngModelChange)="valurChange($event)">
                     <option value="Selected" disabled selected>Select</option>
                     <option *ngFor=" let camp of campaings " [value]="camp.code">
                         {{camp.name}}

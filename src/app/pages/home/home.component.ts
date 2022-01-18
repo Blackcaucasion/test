@@ -2,7 +2,8 @@ import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { filter, first } from 'rxjs/operators';
 import { MarkertingAPIService } from 'src/app/servics/markerting-api.service';
-import { providersInfo } from '../../servics/contsants';
+import { providersInfo ,priceRanges } from '../../servics/contsants';
+
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,8 @@ export class HomeComponent implements OnInit {
   public selectedProvidersSets = new Set();
   public selectedProducts: any
   public providerInfo: any;
+  public priceRange = priceRanges;
+  public selectedPriceRangeLabels:any ="Price";
   // public logos:Array<any> = new Array()
 
   constructor(private readonly markertingAPIService: MarkertingAPIService) { }
@@ -40,14 +43,6 @@ export class HomeComponent implements OnInit {
       this.summarizedProducts = this.promocodeProducts.reduce((prods: any, pc: any) => [...prods, ...this.getProductsFromPromo(pc)], [])
 
       this.providers = [...new Set(this.summarizedProducts?.map(p => p.provider))]
-      //  console.log("provider:",this.providers)
-      //  for (const element of this.providers) {
-      //   const val= providersInfo.filter(item=>item.name.indexOf(element)>-1).map(item=>item.url)
-      //   // console.log("val",val) 
-      //   // this.logos.push(val)
-      //  }
-
-
     })
 
   }
@@ -66,7 +61,6 @@ export class HomeComponent implements OnInit {
   changeSelection(provider: string, event: any) {
 
     if (event.checked) {
-      console.log("checked is rtue")
       this.selectedProvidersSets.add(provider)
 
 
@@ -85,7 +79,7 @@ export class HomeComponent implements OnInit {
     this.selectedProducts = this.summarizedProducts?.filter(p => selectedProviderSet.has(p.provider))
 
     // filter products by price range
-    // selectedProducts = selectedProducts?.filter(filterByPriceRanges)
+    // this.selectedProducts = this.selectedProducts?.filter(this.filterByPriceRanges)
 
     // sort by price from lowest to highest
     this.selectedProducts = this.selectedProducts.sort((pa: { productRate: number; }, pb: { productRate: number; }) => pa.productRate - pb.productRate)
@@ -95,6 +89,10 @@ export class HomeComponent implements OnInit {
   getproviderInfo(name: any) {
 
     this.providerInfo = providersInfo.filter(item => item.name.indexOf(name) > -1).map(item => item.url)
+  }
+  
+  pricesFilter(){
+//To do
 
   }
 }
